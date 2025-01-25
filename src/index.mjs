@@ -1,15 +1,15 @@
 import core from '@actions/core';
 import yaml from 'js-yaml';
-import jp from 'jsonpath';
 import * as fs from "node:fs";
-import pkg from '../package.json';
+import JsonPath from "./utils/json-path.mjs";
+import pkg from '../package.json' with {type: 'json'};
 
 
 const ACTION_NAME = pkg.name;
 const ACTION_VERSION = pkg.version;
 
 
-const filePath = core.getInput('file-path');
+const filePath = core.toPlatformPath(core.getInput('file-path'));
 
 try {
 
@@ -24,11 +24,11 @@ try {
 
 
 	console.log(JSON.stringify({ level: 'info', action: ACTION_NAME, version: ACTION_VERSION, message: `Parsing JSONPaths...`, data: { filePath: filePath } }));
-	const jpNodes = jp.nodes(yamlObject, '$..*');
+	const tokens = JsonPath.getTokens(yamlObject);
 
-	for (let jpNode of jpNodes) {
-		const key = jp.stringify(jpNode.path);
-		const value = jpNode.value;
+	for (let token of tokens) {
+		const key = token.key;
+		const value = token.value;
 
 		core.setOutput(key, value);
 	}
