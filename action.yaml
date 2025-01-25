@@ -1,0 +1,21 @@
+name: 'Read YAML'
+description: 'Simple action to read YAML files and expose them as objects'
+
+runs:
+  using: 'node20'
+  main: 'src/index.mjs'
+
+inputs:
+  file-path:
+    description: 'Path of the file to read'
+    required: true
+
+outputs:
+  $:
+    description: 'The parsed YAML object as JSONPath syntax'
+  outcome:
+    description: 'If it caught errors reading the file, it will be "failure", otherwise it will be "success"'
+  error:
+    description: 'If it caught errors reading the file, it will be the error message, otherwise it will not be set'
+
+

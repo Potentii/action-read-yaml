@@ -1,0 +1,11 @@
+prop1: val1
+prop2:
+    prop3: val3
+    prop4:
+        prop5: val5
+        prop6:
+            - val6_0
+            - val6_1
+            - val6_2
+            -   prop7: val7
+                prop8: val8

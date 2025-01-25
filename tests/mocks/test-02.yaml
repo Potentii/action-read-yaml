@@ -1,0 +1,11 @@
+app:
+    name: My application
+    version: 1.2.0
+
+features:
+    - Feature X
+    - Feature Y
+    - Feature Z
+
+deploy:
+    account_id: 0123456789
