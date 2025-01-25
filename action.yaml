@@ -5,6 +5,10 @@ runs:
   using: 'node20'
   main: 'src/index.mjs'
 
+branding:
+    color: red
+    icon: file-text
+
 inputs:
   file-path:
     description: 'Path of the file to read'
