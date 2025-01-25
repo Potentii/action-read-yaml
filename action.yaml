@@ -1,4 +1,4 @@
-name: 'Read YAML'
+name: '@potentii/action-read-yaml'
 description: 'Simple action to read YAML files and expose them as objects'
 
 runs:
