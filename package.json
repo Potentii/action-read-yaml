@@ -1,13 +1,13 @@
 {
 	"name": "@potentii/action-read-yaml",
 	"description": "Simple action to read YAML files and expose them as objects",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"type": "module",
 	"main": "src/index.mjs",
 	"author": "Guilherme Reginaldo Ruella<potentii@gmail.com>",
 	"license": "MIT",
 	"scripts": {
-		"ncc-build": "ncc build src/index.mjs --minify --target es2022"
+		"vite-build": "vite build"
 	},
 	"dependencies": {
 		"@actions/core": "1.11.1",
@@ -15,6 +15,6 @@
 		"jsonpath": "1.1.1"
 	},
 	"devDependencies": {
-		"@vercel/ncc": "0.38.3"
+		"vite": "6.0.11"
 	}
 }

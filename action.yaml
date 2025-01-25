@@ -3,7 +3,7 @@ description: 'Simple action to read YAML files and expose them as objects'
 
 runs:
   using: 'node20'
-  main: 'dist/index.mjs'
+  main: 'dist/index.js'
 
 branding:
     color: red
