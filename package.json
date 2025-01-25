@@ -1,13 +1,14 @@
 {
 	"name": "@potentii/action-read-yaml",
 	"description": "Simple action to read YAML files and expose them as objects",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"type": "module",
 	"main": "src/index.mjs",
 	"author": "Guilherme Reginaldo Ruella<potentii@gmail.com>",
 	"license": "MIT",
 	"scripts": {
-		"vite-build": "vite build"
+		"vite-build": "vite build",
+		"act-test": "act -W tests/mocks/test-workflow.yaml"
 	},
 	"dependencies": {
 		"@actions/core": "1.11.1",

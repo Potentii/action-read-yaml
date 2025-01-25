@@ -1,0 +1,22 @@
+name: Test YAML
+
+on: push
+
+jobs:
+    test-yaml:
+        name: test-yaml
+        runs-on: ubuntu-latest
+
+        steps:
+
+            -  name: Read properties.yaml
+               uses: ./
+               id: read_yaml
+               with:
+                   file-path: ${{ github.workspace }}/tests/mocks/test-02.yaml
+
+
+            -  name: Outputs
+               run: |
+                   echo "Result ${{ steps.read_yaml.outputs['$.app.name'] }}" >> $GITHUB_STEP_SUMMARY
+

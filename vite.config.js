@@ -5,7 +5,7 @@ export default defineConfig({
 	build: {
 		lib: {
 			entry: './src/index.mjs',
-			formats: [ 'es' ],
+			formats: [ 'system' ],
 			name: 'ReadYaml',
 			fileName: 'index',
 		},
