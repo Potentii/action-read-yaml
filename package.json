@@ -1,13 +1,20 @@
 {
 	"name": "@potentii/action-read-yaml",
 	"description": "Simple action to read YAML files and expose them as objects",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"type": "module",
+	"main": "src/index.mjs",
 	"author": "Guilherme Reginaldo Ruella<potentii@gmail.com>",
 	"license": "MIT",
+	"scripts": {
+		"ncc-build": "ncc build src/index.mjs --minify --target es2022"
+	},
 	"dependencies": {
 		"@actions/core": "1.11.1",
 		"js-yaml": "4.1.0",
 		"jsonpath": "1.1.1"
+	},
+	"devDependencies": {
+		"@vercel/ncc": "0.38.3"
 	}
 }
